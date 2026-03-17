@@ -334,7 +334,6 @@ const Portfolio = () => {
         { title: "Corporate Poster 1", url: "https://drive.google.com/thumbnail?id=1HgP09Z9wCRF6ZJz7wcf7orJOWBZOCBRA&sz=w1000" },
         { title: "Corporate Poster 2", url: "https://drive.google.com/thumbnail?id=1-xiMed4lDz_9cHsI8-AY-QZqDmMIug0N&sz=w1000" },
         { title: "Corporate Poster 3", url: "https://drive.google.com/thumbnail?id=1w1qNDaH_NWvD2l8waRzTQYIMMwdrEsRV&sz=w1000" },
-        { title: "Corporate Poster 4", url: "https://drive.google.com/thumbnail?id=1QU5-IFvF_TDN8290iXeBlgcodm13Gjt9&sz=w1000" },
       ]
     },
   ];
