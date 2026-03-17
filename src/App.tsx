@@ -14,9 +14,10 @@ const Navbar = () => (
       <motion.span
         animate={{ 
           color: ['#ffffff', '#9ca3af', '#ffffff'],
-          textShadow: ['0px 0px 0px rgba(255,255,255,0)', '0px 0px 8px rgba(255,255,255,0.5)', '0px 0px 0px rgba(255,255,255,0)']
+          textShadow: ['0px 0px 0px rgba(255,255,255,0)', '0px 0px 12px rgba(255,255,255,0.8)', '0px 0px 0px rgba(255,255,255,0)'],
+          x: [0, -1, 1, -1, 0],
         }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
       >
         HD
       </motion.span>
@@ -24,8 +25,9 @@ const Navbar = () => (
         className="text-accent mx-[2px] inline-block"
         animate={{ 
           opacity: [1, 0.5, 1], 
-          scale: [1, 1.4, 1],
-          rotate: [0, 180, 360]
+          scale: [1, 1.6, 1],
+          rotate: [0, 180, 360],
+          filter: ['hue-rotate(0deg)', 'hue-rotate(90deg)', 'hue-rotate(0deg)']
         }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -34,9 +36,10 @@ const Navbar = () => (
       <motion.span
         animate={{ 
           color: ['#ffffff', '#9ca3af', '#ffffff'],
-          textShadow: ['0px 0px 0px rgba(255,255,255,0)', '0px 0px 8px rgba(255,255,255,0.5)', '0px 0px 0px rgba(255,255,255,0)']
+          textShadow: ['0px 0px 0px rgba(255,255,255,0)', '0px 0px 12px rgba(255,255,255,0.8)', '0px 0px 0px rgba(255,255,255,0)'],
+          x: [0, 1, -1, 1, 0],
         }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
+        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
       >
         CREATIVES
       </motion.span>
@@ -82,7 +85,13 @@ const Hero = () => {
             <div className="flex -space-x-2">
               {[1, 2, 3].map((i) => (
                 <div key={i} className="w-8 h-8 rounded-full border-2 border-bg bg-surface flex items-center justify-center overflow-hidden">
-                  <img src={`https://picsum.photos/seed/client${i}/100/100`} alt="Client" className="w-full h-full object-cover opacity-70" referrerPolicy="no-referrer" />
+                  <img 
+                    src={`https://picsum.photos/seed/client${i}/100/100`} 
+                    alt="Client" 
+                    className="w-full h-full object-cover opacity-70" 
+                    referrerPolicy="no-referrer" 
+                    loading="lazy"
+                  />
                 </div>
               ))}
             </div>
@@ -279,6 +288,14 @@ const Portfolio = () => {
         { title: "Social Media Creative 2", url: "https://drive.google.com/thumbnail?id=1pPKfxjOSwZVurAaddMn9zQBN2S9Ol_cR&sz=w1000" },
         { title: "Social Media Creative 3", url: "https://drive.google.com/thumbnail?id=11KkHJzTi-RenuaxucVtq-Gd8-4WN8TA1&sz=w1000" },
         { title: "Social Media Creative 4", url: "https://drive.google.com/thumbnail?id=1YSiBhBjzZJ9XjcUjgsDg2WVfZ1xXaQBt&sz=w1000" },
+        { title: "Social Media Creative 5", url: "https://drive.google.com/thumbnail?id=1aTk1gAm1Rt4x6Qep-gqPXEwoG2ib8idW&sz=w1000" },
+        { title: "Social Media Creative 6", url: "https://drive.google.com/thumbnail?id=1icvNwhJA2_QTJGq49iKTZ-G36LIgHKJW&sz=w1000" },
+        { title: "Social Media Creative 7", url: "https://drive.google.com/thumbnail?id=1USPZwukECsmL7kvvM4hzJETUA-deHX1K&sz=w1000" },
+        { title: "Social Media Creative 8", url: "https://drive.google.com/thumbnail?id=1qG1thFp_izd7PsSt2uTZcl7oOyYfbKQO&sz=w1000" },
+        { title: "Social Media Creative 9", url: "https://drive.google.com/thumbnail?id=16KUHyWDCCOuyLdliBx8zGyJ-YMoi7kYW&sz=w1000" },
+        { title: "Social Media Creative 10", url: "https://drive.google.com/thumbnail?id=1gL9FAnoqxF5JXvq35NrCLwVVjcAccx4o&sz=w1000" },
+        { title: "Social Media Creative 11", url: "https://drive.google.com/thumbnail?id=10J4DIYmpCaJXIbZdehzccq7e82nPbmet&sz=w1000" },
+        { title: "Social Media Creative 12", url: "https://drive.google.com/thumbnail?id=1T5yYzlbrUfZ1a3vIdmobcyxyelCicjo1&sz=w1000" },
       ]
     },
     { 
@@ -303,16 +320,21 @@ const Portfolio = () => {
         { title: "Thumbnail 4", url: "https://drive.google.com/thumbnail?id=18aGBNRhYEg0TubWOTdYnBChA_-DlRKtp&sz=w1000" },
         { title: "Thumbnail 5", url: "https://drive.google.com/thumbnail?id=1OThwdtWwuyvVIam5IZNq7XVMKdoH_XUh&sz=w1000" },
         { title: "Thumbnail 6", url: "https://drive.google.com/thumbnail?id=1kZgwpXxpmV-vKQOYYKGJeRTpwSIaYN02&sz=w1000" },
+        { title: "Thumbnail 7", url: "https://drive.google.com/thumbnail?id=1QU5-IFvF_TDN8290iXeBlgcodm13Gjt9&sz=w1000" },
       ]
     },
     { 
-      title: "Corporate Brochure", 
+      title: "Corporate Brochure & Posters", 
       isFolder: true,
       thumbnail: "https://drive.google.com/thumbnail?id=1ENF5Yj-6VC5Cn7gX7xnPIvd9VD5e9FWw&sz=w1000",
       images: [
         { title: "Brochure Design 1", url: "https://drive.google.com/thumbnail?id=1ENF5Yj-6VC5Cn7gX7xnPIvd9VD5e9FWw&sz=w1000" },
         { title: "Brochure Design 2", url: "https://drive.google.com/thumbnail?id=1HiGjNIC-9vBbfL2cpqAPQO_gFV7rumSp&sz=w1000" },
         { title: "Brochure Design 3", url: "https://drive.google.com/thumbnail?id=1aPAOZ2lhb3iFgFAG9XM8UXjk15f7beaP&sz=w1000" },
+        { title: "Corporate Poster 1", url: "https://drive.google.com/thumbnail?id=1HgP09Z9wCRF6ZJz7wcf7orJOWBZOCBRA&sz=w1000" },
+        { title: "Corporate Poster 2", url: "https://drive.google.com/thumbnail?id=1-xiMed4lDz_9cHsI8-AY-QZqDmMIug0N&sz=w1000" },
+        { title: "Corporate Poster 3", url: "https://drive.google.com/thumbnail?id=1w1qNDaH_NWvD2l8waRzTQYIMMwdrEsRV&sz=w1000" },
+        { title: "Corporate Poster 4", url: "https://drive.google.com/thumbnail?id=1QU5-IFvF_TDN8290iXeBlgcodm13Gjt9&sz=w1000" },
       ]
     },
   ];
@@ -332,19 +354,25 @@ const Portfolio = () => {
             return (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.3, ease: "easeOut" } }}
+                initial={{ opacity: 0, y: 40, scale: 0.95, rotateX: 10 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1, rotateX: 0 }}
+                whileHover={{ 
+                  y: -12, 
+                  scale: 1.05, 
+                  rotateY: idx % 2 === 0 ? 5 : -5,
+                  transition: { duration: 0.4, ease: "easeOut" } 
+                }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: idx * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
+                transition={{ duration: 0.8, delay: idx * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
                 onClick={() => project.isFolder ? setActiveFolder(project) : null}
-                className="group block relative aspect-[4/3] rounded-2xl overflow-hidden bg-surface shadow-lg hover:shadow-accent/20 hover:shadow-2xl transition-shadow duration-300 cursor-pointer"
+                className="group block relative aspect-[4/3] rounded-2xl overflow-hidden bg-surface shadow-lg hover:shadow-accent/30 hover:shadow-2xl transition-all duration-500 cursor-pointer perspective-1000"
               >
                 <img 
                   src={project.thumbnail} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
                 />
                 {project.isFolder && (
                   <div className="absolute top-4 left-4 z-10 bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-lg flex items-center gap-2 border border-white/10">
@@ -399,17 +427,23 @@ const Portfolio = () => {
                   {activeFolder.images.map((img: any, idx: number) => (
                     <motion.div
                       key={idx}
-                      initial={{ opacity: 0, y: 30, scale: 0.95 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
+                      initial={{ opacity: 0, y: 30, scale: 0.8, rotate: -5 }}
+                      animate={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+                      transition={{ 
+                        type: "spring",
+                        damping: 15,
+                        stiffness: 100,
+                        delay: idx * 0.08 
+                      }}
                       onClick={() => setLightboxImage(img.url)}
-                      className="group relative aspect-[3/4] rounded-xl overflow-hidden bg-[#1e1e1e] border border-white/5 cursor-pointer"
+                      className="group relative aspect-[3/4] rounded-xl overflow-hidden bg-[#1e1e1e] border border-white/5 cursor-pointer shadow-xl hover:shadow-accent/10"
                     >
                       <img 
                         src={img.url} 
                         alt={img.title} 
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-90 group-hover:opacity-100"
                         referrerPolicy="no-referrer"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
                         <h4 className="text-lg font-bold text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{img.title}</h4>
@@ -497,9 +531,9 @@ const Contact = () => {
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12 items-start">
+        <div className="max-w-2xl mx-auto">
           <div className="flex flex-col gap-6">
-            <h3 className="text-2xl font-bold mb-4">Get in Touch</h3>
+            <h3 className="text-2xl font-bold mb-4 text-center">Get in Touch</h3>
             <a href="mailto:dchittiprolu@gmail.com" className="flex items-center gap-4 p-6 rounded-2xl bg-surface border border-white/5 hover:border-white/20 transition-colors">
               <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent">
                 <Mail size={24} />
@@ -530,30 +564,11 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="flex items-center gap-6 mt-4 px-2">
+            <div className="flex items-center justify-center gap-6 mt-4 px-2">
               <a href="https://www.behance.net/divyachittip" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-white transition-colors font-medium">Behance</a>
               <a href="https://www.linkedin.com/in/divya-chittiprolu-b535a521a/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:text-white transition-colors font-medium">LinkedIn</a>
             </div>
           </div>
-
-          <form className="flex flex-col gap-6 bg-surface p-8 rounded-3xl border border-white/5" onSubmit={(e) => e.preventDefault()}>
-            <h3 className="text-2xl font-bold mb-2">Send a Message</h3>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="name" className="text-sm text-secondary">Name</label>
-              <input type="text" id="name" className="bg-bg border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="Your name" />
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="email" className="text-sm text-secondary">Email</label>
-              <input type="email" id="email" className="bg-bg border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors" placeholder="your@email.com" />
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="message" className="text-sm text-secondary">Message</label>
-              <textarea id="message" rows={4} className="bg-bg border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-accent transition-colors resize-none" placeholder="Tell me about your project..."></textarea>
-            </div>
-            <button type="submit" className="mt-2 bg-white text-black font-medium py-4 rounded-xl hover:bg-gray-200 transition-colors flex items-center justify-center gap-2">
-              Send Message <ArrowRight size={18} />
-            </button>
-          </form>
         </div>
       </div>
     </section>
@@ -569,7 +584,8 @@ const Footer = () => (
       <motion.span
         animate={{ 
           color: ['#ffffff', '#9ca3af', '#ffffff'],
-          textShadow: ['0px 0px 0px rgba(255,255,255,0)', '0px 0px 8px rgba(255,255,255,0.5)', '0px 0px 0px rgba(255,255,255,0)']
+          textShadow: ['0px 0px 0px rgba(255,255,255,0)', '0px 0px 12px rgba(255,255,255,0.8)', '0px 0px 0px rgba(255,255,255,0)'],
+          x: [0, -1, 1, -1, 0],
         }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -579,8 +595,9 @@ const Footer = () => (
         className="text-accent mx-[2px] inline-block"
         animate={{ 
           opacity: [1, 0.5, 1], 
-          scale: [1, 1.4, 1],
-          rotate: [0, 180, 360]
+          scale: [1, 1.6, 1],
+          rotate: [0, 180, 360],
+          filter: ['hue-rotate(0deg)', 'hue-rotate(90deg)', 'hue-rotate(0deg)']
         }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
       >
@@ -589,7 +606,8 @@ const Footer = () => (
       <motion.span
         animate={{ 
           color: ['#ffffff', '#9ca3af', '#ffffff'],
-          textShadow: ['0px 0px 0px rgba(255,255,255,0)', '0px 0px 8px rgba(255,255,255,0.5)', '0px 0px 0px rgba(255,255,255,0)']
+          textShadow: ['0px 0px 0px rgba(255,255,255,0)', '0px 0px 12px rgba(255,255,255,0.8)', '0px 0px 0px rgba(255,255,255,0)'],
+          x: [0, 1, -1, 1, 0],
         }}
         transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
       >
