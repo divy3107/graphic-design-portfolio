@@ -264,6 +264,7 @@ const Portfolio = () => {
         { title: "Sambar Premix", url: "https://drive.google.com/thumbnail?id=1kjqiItXiA1nuJ6ofRNiS4erd-cq9R0lF&sz=w1000" },
         { title: "Rasam Premix", url: "https://drive.google.com/thumbnail?id=1SEPoo-_l95VQTNO3WE0yxnCOMNssCSPe&sz=w1000" },
         { title: "Poha Premix", url: "https://drive.google.com/thumbnail?id=1i5b9TMGePXe95G-uNkkGFk7EwGoke3f6&sz=w1000" },
+        { title: "New Packaging", url: "https://drive.google.com/thumbnail?id=1U5R7lG3U5s0aMmEuX6lQUYh7PVFnRxdj&sz=w1000" },
       ]
     },
     { 
@@ -307,6 +308,7 @@ const Portfolio = () => {
         { title: "Event Poster 2", url: "https://drive.google.com/thumbnail?id=1_lZ7lpTwLCxRBc4ark4EWfbTYCpVpYfx&sz=w1000" },
         { title: "Event Poster 3", url: "https://drive.google.com/thumbnail?id=1o4xpxIGoHvithlyOLziTsgthO3pYjlEU&sz=w1000" },
         { title: "Event Poster 4", url: "https://drive.google.com/thumbnail?id=1SXYM9726aEmuyY56y8602oEzjZ6pklaS&sz=w1000" },
+        { title: "Event Poster 5", url: "https://drive.google.com/thumbnail?id=1-2as98JLL5pkbjSeMNegSAimOWvvV1_Y&sz=w1000" },
       ]
     },
     { 
@@ -334,6 +336,38 @@ const Portfolio = () => {
         { title: "Corporate Poster 1", url: "https://drive.google.com/thumbnail?id=1HgP09Z9wCRF6ZJz7wcf7orJOWBZOCBRA&sz=w1000" },
         { title: "Corporate Poster 2", url: "https://drive.google.com/thumbnail?id=1-xiMed4lDz_9cHsI8-AY-QZqDmMIug0N&sz=w1000" },
         { title: "Corporate Poster 3", url: "https://drive.google.com/thumbnail?id=1w1qNDaH_NWvD2l8waRzTQYIMMwdrEsRV&sz=w1000" },
+      ]
+    },
+    { 
+      title: "Banner designs", 
+      isFolder: true,
+      thumbnail: "https://drive.google.com/thumbnail?id=1cKDKxBF4T0L-73wUGIGiRLlBwgPqK4HU&sz=w1000",
+      images: [
+        { title: "Banner Design 1", url: "https://drive.google.com/thumbnail?id=1cKDKxBF4T0L-73wUGIGiRLlBwgPqK4HU&sz=w1000" },
+        { title: "Banner Design 2", url: "https://drive.google.com/thumbnail?id=11tktmsTc1uQX8WWkPXN1aUJ10tIrzfME&sz=w1000" },
+      ]
+    },
+    { 
+      title: "Carousels", 
+      isFolder: true,
+      thumbnail: "https://drive.google.com/thumbnail?id=1JJ1NEsYjdyDtwDVhA8ZdFO36tPf8CAhR&sz=w1000",
+      images: [
+        { title: "Carousel Design 1", url: "https://drive.google.com/thumbnail?id=1JJ1NEsYjdyDtwDVhA8ZdFO36tPf8CAhR&sz=w1000" },
+        { title: "Carousel Design 2", url: "https://drive.google.com/thumbnail?id=1JsvA_MNcOrBXYAAJx-tZ3OC0KubKN5m5&sz=w1000" },
+        { title: "Carousel Design 3", url: "https://drive.google.com/thumbnail?id=1VK1DA9EdbYzqRVjV7SAShIwFAnxZrf-J&sz=w1000" },
+        { title: "Carousel Design 4", url: "https://drive.google.com/thumbnail?id=1qphCMpZ9KJXhRkCXmTapJ3dWBD0ZC3Li&sz=w1000" },
+        { title: "Carousel Design 5", url: "https://drive.google.com/thumbnail?id=1j8xNKIq6pVsECyFj7l3Uz-ShmQwTujjm&sz=w1000" },
+        { title: "Carousel Design 6", url: "https://drive.google.com/thumbnail?id=1SgRqsVDB8sIQdE_2vF-l_6Z2KHDMAZTj&sz=w1000" },
+      ]
+    },
+    { 
+      title: "Website banner design", 
+      isFolder: true,
+      thumbnail: "https://drive.google.com/thumbnail?id=11tjLOXh7_eHuOSh1ro8h9KVL-v-BJJBp&sz=w1000",
+      images: [
+        { title: "Website Banner 1", url: "https://drive.google.com/thumbnail?id=11tjLOXh7_eHuOSh1ro8h9KVL-v-BJJBp&sz=w1000" },
+        { title: "Website Banner 2", url: "https://drive.google.com/thumbnail?id=1Wtpv-Nww_1oV90mhKy1ZHo45XfksUC7e&sz=w1000" },
+        { title: "Website Banner 3", url: "https://drive.google.com/thumbnail?id=1e6nneM5K6kCMDH9jQI1V8yRJtr2UTCKO&sz=w1000" },
       ]
     },
   ];
@@ -553,13 +587,14 @@ const Contact = () => {
               </div>
             </a>
 
-            <div className="flex items-center gap-4 p-6 rounded-2xl bg-surface border border-white/5">
-              <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent">
+            <div className="flex items-start gap-4 p-6 rounded-2xl bg-surface border border-white/5">
+              <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center text-accent shrink-0">
                 <MapPin size={24} />
               </div>
               <div>
-                <p className="text-sm text-secondary mb-1">Location</p>
-                <p className="font-medium">Hyderabad, India</p>
+                <p className="text-sm text-secondary mb-1">Divya Graphics - Digital Printing Service</p>
+                <p className="font-medium mb-2">1-9-286/2/4/C/1/A, Ramnagar Gundu, Adikmet, Hyderabad, Telangana 500020</p>
+                <p className="text-sm text-secondary">Hours: Opens 9 am Mon</p>
               </div>
             </div>
 
