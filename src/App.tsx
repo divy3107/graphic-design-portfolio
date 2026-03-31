@@ -194,6 +194,7 @@ const Experience = () => {
           </div>
           <div className="space-y-12">
             {[
+              { role: "Graphic Designer Intern", company: "Engage Sphere Technology Pvt Ltd", period: "Feb 2025 – April 2025", desc: "Contributed to graphic design projects and gained hands-on experience in a professional tech environment." },
               { role: "Freelance Graphic Designer", company: "Self-Employed", period: "2022 – Present", desc: "Working with 100+ clients globally, delivering high-quality brand and marketing designs." },
               { role: "Junior Designer", company: "Kolli Graphics", period: "2021 – 2022", desc: "Assisted in creating visual concepts, communicating ideas that inspire, inform, and captivate consumers." },
               { role: "Design Intern", company: "Halftone Digitals", period: "2021", desc: "Gained hands-on experience in digital design and print media production." },
