@@ -146,7 +146,6 @@ const Services = () => {
     { icon: <Palette />, title: "Print & Marketing Materials", desc: "Flyers, brochures, and banners that stand out." },
     { icon: <ImageIcon />, title: "Thumbnail Design", desc: "Click-worthy thumbnails for your video content." },
     { icon: <Box />, title: "Packaging Design", desc: "Product packaging that tells your brand story." },
-    { icon: <Video />, title: "Video Editing", desc: "Crisp and engaging edits for your raw footage." },
     { icon: <Layout />, title: "Ecommerce Product Images", desc: "High-converting listing images for your products." },
   ];
 
@@ -313,14 +312,9 @@ const Portfolio = () => {
     { 
       title: "Event Poster Design", 
       isFolder: true,
-      thumbnail: "https://drive.google.com/thumbnail?id=1SUXol4lfZaWGjZ3DpBLKGBw5UENCE2Ih&sz=w1000",
+      thumbnail: "https://drive.google.com/thumbnail?id=1gvPRzxlnRURnbeni-tm3GcyuEZlhRHfK&sz=w1000",
       images: [
-        { title: "Event Poster 1", url: "https://drive.google.com/thumbnail?id=1SUXol4lfZaWGjZ3DpBLKGBw5UENCE2Ih&sz=w1000" },
-        { title: "Event Poster 2", url: "https://drive.google.com/thumbnail?id=1_lZ7lpTwLCxRBc4ark4EWfbTYCpVpYfx&sz=w1000" },
-        { title: "Event Poster 3", url: "https://drive.google.com/thumbnail?id=1o4xpxIGoHvithlyOLziTsgthO3pYjlEU&sz=w1000" },
-        { title: "Event Poster 4", url: "https://drive.google.com/thumbnail?id=1SXYM9726aEmuyY56y8602oEzjZ6pklaS&sz=w1000" },
-        { title: "Event Poster 5", url: "https://drive.google.com/thumbnail?id=1-2as98JLL5pkbjSeMNegSAimOWvvV1_Y&sz=w1000" },
-        { title: "Event Poster 6", url: "https://drive.google.com/thumbnail?id=1gvPRzxlnRURnbeni-tm3GcyuEZlhRHfK&sz=w1000" },
+        { title: "Event Poster", url: "https://drive.google.com/thumbnail?id=1gvPRzxlnRURnbeni-tm3GcyuEZlhRHfK&sz=w1000" },
       ]
     },
     { 
