@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, Mail, MapPin, ExternalLink, Briefcase, GraduationCap, Palette, Layout, Video, Image as ImageIcon, Box, Folder, X, Phone } from "lucide-react";
+import { ArrowRight, Mail, MapPin, ExternalLink, Briefcase, GraduationCap, Palette, Layout, Video, Image as ImageIcon, Box, Folder, X, Phone, ArrowLeft } from "lucide-react";
 import { useEffect, useState } from "react";
 
 // --- Components ---
@@ -251,8 +251,10 @@ const Experience = () => {
 };
 
 const Portfolio = () => {
-  const [activeFolder, setActiveFolder] = useState<any>(null);
+  const [activeFolderHistory, setActiveFolderHistory] = useState<any[]>([]);
   const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+
+  const activeFolder = activeFolderHistory[activeFolderHistory.length - 1] || null;
 
   const projects = [
     { 
@@ -266,6 +268,14 @@ const Portfolio = () => {
         { title: "Rasam Premix", url: "https://drive.google.com/thumbnail?id=1SEPoo-_l95VQTNO3WE0yxnCOMNssCSPe&sz=w1000" },
         { title: "Poha Premix", url: "https://drive.google.com/thumbnail?id=1i5b9TMGePXe95G-uNkkGFk7EwGoke3f6&sz=w1000" },
         { title: "New Packaging", url: "https://drive.google.com/thumbnail?id=1U5R7lG3U5s0aMmEuX6lQUYh7PVFnRxdj&sz=w1000" },
+        { 
+          title: "Water Label Designs", 
+          isFolder: true, 
+          images: [
+            { title: "water label design", url: "https://drive.google.com/thumbnail?id=1NDGN6qafNucZioihOlMQXUA59mn3erSj&sz=w1000" },
+            { title: "water label design 2", url: "https://drive.google.com/thumbnail?id=1xZmxzwNnpr7uwAXC9t6M-KhfyptFsS6h&sz=w1000" }
+          ]
+        },
       ]
     },
     { 
@@ -310,6 +320,7 @@ const Portfolio = () => {
         { title: "Event Poster 3", url: "https://drive.google.com/thumbnail?id=1o4xpxIGoHvithlyOLziTsgthO3pYjlEU&sz=w1000" },
         { title: "Event Poster 4", url: "https://drive.google.com/thumbnail?id=1SXYM9726aEmuyY56y8602oEzjZ6pklaS&sz=w1000" },
         { title: "Event Poster 5", url: "https://drive.google.com/thumbnail?id=1-2as98JLL5pkbjSeMNegSAimOWvvV1_Y&sz=w1000" },
+        { title: "Event Poster 6", url: "https://drive.google.com/thumbnail?id=1gvPRzxlnRURnbeni-tm3GcyuEZlhRHfK&sz=w1000" },
       ]
     },
     { 
@@ -398,7 +409,7 @@ const Portfolio = () => {
                 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.8, delay: idx * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-                onClick={() => project.isFolder ? setActiveFolder(project) : null}
+                onClick={() => project.isFolder ? setActiveFolderHistory([project]) : null}
                 className="group block relative aspect-[4/3] rounded-2xl overflow-hidden bg-surface shadow-lg hover:shadow-accent/30 hover:shadow-2xl transition-all duration-500 cursor-pointer perspective-1000"
               >
                 <img 
@@ -445,11 +456,19 @@ const Portfolio = () => {
             >
               <div className="sticky top-0 z-10 flex items-center justify-between p-6 bg-surface/80 backdrop-blur-md border-b border-white/5">
                 <div className="flex items-center gap-3">
+                  {activeFolderHistory.length > 1 && (
+                    <button 
+                      onClick={() => setActiveFolderHistory(prev => prev.slice(0, -1))}
+                      className="mr-2 p-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors text-secondary hover:text-white"
+                    >
+                      <ArrowLeft size={20} />
+                    </button>
+                  )}
                   <Folder className="text-accent" size={24} />
                   <h3 className="font-display text-2xl font-bold">{activeFolder.title}</h3>
                 </div>
                 <button 
-                  onClick={() => setActiveFolder(null)}
+                  onClick={() => setActiveFolderHistory([])}
                   className="p-2 rounded-full bg-white/5 hover:bg-white/10 transition-colors text-secondary hover:text-white"
                 >
                   <X size={24} />
@@ -469,19 +488,31 @@ const Portfolio = () => {
                         stiffness: 100,
                         delay: idx * 0.08 
                       }}
-                      onClick={() => setLightboxImage(img.url)}
-                      className="group relative aspect-[3/4] rounded-xl overflow-hidden bg-[#1e1e1e] border border-white/5 cursor-pointer shadow-xl hover:shadow-accent/10"
+                      onClick={() => img.isFolder ? setActiveFolderHistory([...activeFolderHistory, img]) : setLightboxImage(img.url)}
+                      className="group relative aspect-[3/4] rounded-xl overflow-hidden bg-[#1e1e1e] border border-white/5 cursor-pointer shadow-xl hover:shadow-accent/10 flex flex-col items-center justify-center p-4 text-center"
                     >
-                      <img 
-                        src={img.url} 
-                        alt={img.title} 
-                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-90 group-hover:opacity-100"
-                        referrerPolicy="no-referrer"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
-                        <h4 className="text-lg font-bold text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{img.title}</h4>
-                      </div>
+                      {img.isFolder ? (
+                        <>
+                          <Folder size={64} className="text-accent mb-6 group-hover:scale-110 transition-transform duration-500" />
+                          <h4 className="text-xl font-bold text-white z-10">{img.title}</h4>
+                          <span className="text-accent text-sm mt-4 opacity-0 group-hover:opacity-100 transition-all duration-300 font-medium tracking-wide flex items-center gap-2">
+                             Open Folder <ArrowRight size={14} />
+                          </span>
+                        </>
+                      ) : (
+                        <>
+                          <img 
+                            src={img.url} 
+                            alt={img.title} 
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 opacity-90 group-hover:opacity-100"
+                            referrerPolicy="no-referrer"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
+                            <h4 className="text-lg font-bold text-white translate-y-4 group-hover:translate-y-0 transition-transform duration-300">{img.title}</h4>
+                          </div>
+                        </>
+                      )}
                     </motion.div>
                   ))}
                 </div>
